@@ -1,0 +1,76 @@
+﻿@model IEnumerable<WebApplication6.Trainer_Details>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/_LayoutPage1.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TDOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TDateofjoin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TSalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TQualification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TSchedule)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TPWD)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TDOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TDateofjoin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TSalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TQualification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TSchedule)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TPWD)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TId })
+        </td>
+    </tr>
+}
+
+</table>

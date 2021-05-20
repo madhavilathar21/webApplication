@@ -1,0 +1,173 @@
+﻿@model WebApplication6.Mem_Tab
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/_LayoutPage1.cshtml";
+}
+
+<h2>Create Your Profile</h2>
+@*atli script add karva ni resume ma and niche onfocus and onKeypress pan add karva nu every single controler ma baki che 16/12/2017
+    *@
+<script type="text/javascript">
+      function showContent(e) {
+          var recentChar = String.fromCharCode(e.which);
+          var Obj1 = new ActiveXObject("Sapi.SpVoice");
+	     		Obj1.Speak(recentChar );
+		delete Obj1;
+
+      }
+      function speak(id)
+      {
+        var Obj2 = new ActiveXObject("Sapi.SpVoice");
+	            if(id==1)
+                {
+        		Obj2.Speak("Please eneter your name");
+		        delete Obj2;
+		        }
+		        if(id==2)
+                {
+        		Obj2.Speak("Please eneter your Address" );
+		        delete Obj2;
+		        }
+		        if (id == 3) {
+		            Obj2.Speak("Please eneter your Mobile Number");
+		            delete Obj2;
+		        }
+		        if (id == 4) {
+		            Obj2.Speak("Please eneter your Age ");
+		            delete Obj2;
+		        }
+		        if (id == 5) {
+		            Obj2.Speak("Please eneter your Email address");
+		            delete Obj2;
+		        }
+		        if (id == 6) {
+		            Obj2.Speak("Please eneter your Password");
+		            delete Obj2;
+		        }
+      }
+</script>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+   
+    <div class="form-horizontal">
+      @*  <h4>Mem_Tab</h4> *@
+        <hr />
+
+<table align="center">
+<tr>
+        <td>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            </div>
+        </td>
+        <td>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", onkeypress = "showContent(event)", onfocus = "speak(1)" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </td>
+</tr>
+
+<tr>
+    <td>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            </div>
+    </td>
+    <td>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", onkeypress = "showContent(event)", onfocus = "speak(2)" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+         @*   </div> *@
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Mobile_NO, htmlAttributes: new { @class = "control-label col-md-2" })
+        </div>
+    </td>
+    <td>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Mobile_NO, new { htmlAttributes = new { @class = "form-control", onkeypress = "showContent(event)", onfocus = "speak(3)" } })
+                @Html.ValidationMessageFor(model => model.Mobile_NO, "", new { @class = "text-danger" })
+            </div>
+        @*</div>*@
+    </td>
+</tr>
+
+<tr>
+    <td>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+        </div>
+    </td>
+    <td>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control", onkeypress = "showContent(event)", onfocus = "speak(4)" } })
+                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+            </div>
+        @*</div>*@
+    </td>
+</tr>
+        
+<tr>
+    <td>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+        </div>
+    </td>
+    <td>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", onkeypress = "showContent(event)", onfocus = "speak(5)" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+       @* </div> *@
+    </td>
+</tr>
+        
+<tr>
+    <td>
+        <div class="form-group">
+            @Html.LabelFor(model => model.PWD, htmlAttributes: new { @class = "control-label col-md-2" })
+        </div>
+    </td>
+    <td>
+        <div class="col-md-10">
+                @Html.PasswordFor(model => model.PWD, new { htmlAttributes = new { @class = "form-control", onkeypress = "showContent(event)", onfocus = "speak(6)" } })
+                @Html.ValidationMessageFor(model => model.PWD, "", new { @class = "text-danger" })
+            </div>
+       @* </div> *@
+    </td>
+</tr>
+
+<tr>
+    <td align="center">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </td>
+</tr>
+
+</table>       
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

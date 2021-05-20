@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebApplication6.Apply_Job>
+ 
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/_LayoutPage1.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Job_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>0
+        <th>
+            @Html.DisplayNameFor(model => model.AEmail)            
+        </th>
+    </tr>
+    
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Job_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AEmail)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AEmail }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AEmail }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AEmail })
+        </td>*@
+    </tr>
+}
+
+</table>

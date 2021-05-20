@@ -1,0 +1,17 @@
+﻿@model IEnumerable<WebApplication6.Models.Mem_Tab>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/_LayoutPage1.cshtml";
+}
+<select multiple>
+    @foreach (var item in Model)
+    {
+        <option value=@Html.DisplayFor(modelItem => item.Name)>@Html.DisplayFor(modelItem => item.Name)</option>
+                
+        
+    }
+    </select>
+
+    <h2>List</h2>
+

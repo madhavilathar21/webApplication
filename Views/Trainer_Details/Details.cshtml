@@ -1,0 +1,83 @@
+﻿@model WebApplication6.Trainer_Details
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/_LayoutPage1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Trainer_Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TDOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TDOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TDateofjoin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TDateofjoin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TSalary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TSalary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TQualification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TQualification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TSchedule)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TSchedule)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TPWD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TPWD)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

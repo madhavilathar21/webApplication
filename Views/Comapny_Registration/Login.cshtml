@@ -1,0 +1,44 @@
+﻿@model WebApplication6.Comapny_Registration
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/_LayoutPage1.cshtml";
+}
+
+<h2>Login Here </h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Email)
+            </td>       
+            <td>
+                @Html.EditorFor(Model => Model.Email)
+                <div style="height: 20px;">
+                    @Html.ValidationMessageFor(Model => Model.Email)
+                    </div>
+            </td>     
+        </tr>
+        <tr>
+            <td valign="top">
+                @Html.LabelFor(model => model.Password)
+            </td>
+            <td>
+                @Html.PasswordFor(model => model.Password)
+                <div style="height: 20px;">
+                    @Html.ValidationMessageFor(model => model.Password)
+            </div>
+        </td>            
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Login" />
+            </td>
+        </tr>
+    </table>
+}
+

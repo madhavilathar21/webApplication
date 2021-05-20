@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Apply_Job">
+          <Key>
+            <PropertyRef Name="AEmail" />
+          </Key>
+          <Property Name="AEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Job_id" Type="int" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comapny_Registration">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="Certificate Number" Type="varchar(max)" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone Number" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CPassword" Type="varchar(max)" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Company_Details">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="Address" Type="varchar(max)" Nullable="false" />
+          <Property Name="PhoneNo" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="Details About Comapny" Type="varchar(max)" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mem_Tab">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile_NO" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PWD" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Post_Job">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Comapany Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="Job Descripation" Type="varchar(max)" Nullable="false" />
+          <Property Name="Requirements" Type="varchar(max)" Nullable="false" />
+          <Property Name="Salary" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Contact Info" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Require Qualification" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Resume">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone_No" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Qulification" Type="varchar(max)" Nullable="false" />
+          <Property Name="Address" Type="varchar(max)" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Expertisy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Experince" Type="varchar(max)" Nullable="false" />
+          <Property Name="ExtraSkills" Type="varchar(max)" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="Batch_Id" />
+          </Key>
+          <Property Name="Batch_Id" Type="int" Nullable="false" />
+          <Property Name="Batch_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Batch_Date" Type="varchar(max)" Nullable="false" />
+          <Property Name="Batch_Time" Type="varchar(max)" Nullable="false" />
+          <Property Name="Subject" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Trainer_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Student_Name" Type="varchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\PRUTHVI\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\WEBAPPLICATION6\WEBAPPLICATION6\APP_DATA\DATABASE1.MDF.dbo.Trainer_Details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Trainer_Details">
+          <Key>
+            <PropertyRef Name="TId" />
+            <PropertyRef Name="TName" />
+            <PropertyRef Name="TDOB" />
+            <PropertyRef Name="TDateofjoin" />
+            <PropertyRef Name="TSalary" />
+            <PropertyRef Name="TQualification" />
+            <PropertyRef Name="TSchedule" />
+            <PropertyRef Name="TEmail" />
+            <PropertyRef Name="TPWD" />
+          </Key>
+          <Property Name="TId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TDOB" Type="date" Nullable="false" />
+          <Property Name="TDateofjoin" Type="date" Nullable="false" />
+          <Property Name="TSalary" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TQualification" Type="varchar(max)" Nullable="false" />
+          <Property Name="TSchedule" Type="varchar(max)" Nullable="false" />
+          <Property Name="TEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TPWD" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Apply_Job" EntityType="Self.Apply_Job" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comapny_Registration" EntityType="Self.Comapny_Registration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company_Details" EntityType="Self.Company_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mem_Tab" EntityType="Self.Mem_Tab" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Post_Job" EntityType="Self.Post_Job" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Resume" EntityType="Self.Resume" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Trainer_Details" EntityType="Self.Trainer_Details" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Trainer_Details].[TId] AS [TId], 
+    [Trainer_Details].[TName] AS [TName], 
+    [Trainer_Details].[TDOB] AS [TDOB], 
+    [Trainer_Details].[TDateofjoin] AS [TDateofjoin], 
+    [Trainer_Details].[TSalary] AS [TSalary], 
+    [Trainer_Details].[TQualification] AS [TQualification], 
+    [Trainer_Details].[TSchedule] AS [TSchedule], 
+    [Trainer_Details].[TEmail] AS [TEmail], 
+    [Trainer_Details].[TPWD] AS [TPWD]
+    FROM [dbo].[Trainer_Details] AS [Trainer_Details]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Apply_Job">
+          <Key>
+            <PropertyRef Name="AEmail" />
+          </Key>
+          <Property Name="AEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Job_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comapny_Registration">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Certificate_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone_Number" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Company_Details">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhoneNo" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="Details_About_Comapny" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mem_Tab">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile_NO" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PWD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Post_Job">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Comapany_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Job_Descripation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Requirements" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Contact_Info" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Require_Qualification" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Resume">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Qulification" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Expertisy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Experince" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ExtraSkills" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="Batch_Id" />
+          </Key>
+          <Property Name="Batch_Id" Type="Int32" Nullable="false" />
+          <Property Name="Batch_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Batch_Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Batch_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Trainer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Student_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Trainer_Details">
+          <Key>
+            <PropertyRef Name="TId" />
+            <PropertyRef Name="TName" />
+            <PropertyRef Name="TDOB" />
+            <PropertyRef Name="TDateofjoin" />
+            <PropertyRef Name="TSalary" />
+            <PropertyRef Name="TQualification" />
+            <PropertyRef Name="TSchedule" />
+            <PropertyRef Name="TEmail" />
+            <PropertyRef Name="TPWD" />
+          </Key>
+          <Property Name="TId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TDOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TDateofjoin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TSalary" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TQualification" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TSchedule" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TPWD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Database1Entities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Apply_Job" EntityType="Self.Apply_Job" />
+          <EntitySet Name="Comapny_Registration" EntityType="Self.Comapny_Registration" />
+          <EntitySet Name="Company_Details" EntityType="Self.Company_Details" />
+          <EntitySet Name="Mem_Tab" EntityType="Self.Mem_Tab" />
+          <EntitySet Name="Post_Job" EntityType="Self.Post_Job" />
+          <EntitySet Name="Resumes" EntityType="Self.Resume" />
+          <EntitySet Name="Schedules" EntityType="Self.Schedule" />
+          <EntitySet Name="Trainer_Details" EntityType="Self.Trainer_Details" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities2">
+          <EntitySetMapping Name="Apply_Job">
+            <EntityTypeMapping TypeName="Database1Model.Apply_Job">
+              <MappingFragment StoreEntitySet="Apply_Job">
+                <ScalarProperty Name="AEmail" ColumnName="AEmail" />
+                <ScalarProperty Name="Job_id" ColumnName="Job_id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comapny_Registration">
+            <EntityTypeMapping TypeName="Database1Model.Comapny_Registration">
+              <MappingFragment StoreEntitySet="Comapny_Registration">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Certificate_Number" ColumnName="Certificate Number" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone Number" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CPassword" ColumnName="CPassword" />
+                <ScalarProperty Name="City" ColumnName="City" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company_Details">
+            <EntityTypeMapping TypeName="Database1Model.Company_Details">
+              <MappingFragment StoreEntitySet="Company_Details">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Details_About_Comapny" ColumnName="Details About Comapny" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mem_Tab">
+            <EntityTypeMapping TypeName="Database1Model.Mem_Tab">
+              <MappingFragment StoreEntitySet="Mem_Tab">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile_NO" ColumnName="Mobile_NO" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PWD" ColumnName="PWD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Post_Job">
+            <EntityTypeMapping TypeName="Database1Model.Post_Job">
+              <MappingFragment StoreEntitySet="Post_Job">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Comapany_Name" ColumnName="Comapany Name" />
+                <ScalarProperty Name="Job_Descripation" ColumnName="Job Descripation" />
+                <ScalarProperty Name="Requirements" ColumnName="Requirements" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="Contact_Info" ColumnName="Contact Info" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Require_Qualification" ColumnName="Require Qualification" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Resumes">
+            <EntityTypeMapping TypeName="Database1Model.Resume">
+              <MappingFragment StoreEntitySet="Resume">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Qulification" ColumnName="Qulification" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Expertisy" ColumnName="Expertisy" />
+                <ScalarProperty Name="Experince" ColumnName="Experince" />
+                <ScalarProperty Name="ExtraSkills" ColumnName="ExtraSkills" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schedules">
+            <EntityTypeMapping TypeName="Database1Model.Schedule">
+              <MappingFragment StoreEntitySet="Schedule">
+                <ScalarProperty Name="Batch_Id" ColumnName="Batch_Id" />
+                <ScalarProperty Name="Batch_Name" ColumnName="Batch_Name" />
+                <ScalarProperty Name="Batch_Date" ColumnName="Batch_Date" />
+                <ScalarProperty Name="Batch_Time" ColumnName="Batch_Time" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Trainer_Name" ColumnName="Trainer_Name" />
+                <ScalarProperty Name="Student_Name" ColumnName="Student_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trainer_Details">
+            <EntityTypeMapping TypeName="Database1Model.Trainer_Details">
+              <MappingFragment StoreEntitySet="Trainer_Details">
+                <ScalarProperty Name="TId" ColumnName="TId" />
+                <ScalarProperty Name="TName" ColumnName="TName" />
+                <ScalarProperty Name="TDOB" ColumnName="TDOB" />
+                <ScalarProperty Name="TDateofjoin" ColumnName="TDateofjoin" />
+                <ScalarProperty Name="TSalary" ColumnName="TSalary" />
+                <ScalarProperty Name="TQualification" ColumnName="TQualification" />
+                <ScalarProperty Name="TSchedule" ColumnName="TSchedule" />
+                <ScalarProperty Name="TEmail" ColumnName="TEmail" />
+                <ScalarProperty Name="TPWD" ColumnName="TPWD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
